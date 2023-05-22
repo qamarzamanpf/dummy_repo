@@ -14,7 +14,6 @@ import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.example.shuftirpo.Listeners.CameraListener;
 import com.example.shuftirpo.Listeners.NetworkListener;
 import com.example.shuftirpo.R;
 import com.example.shuftirpo.Singleton.SetAndGetData;
@@ -69,9 +68,9 @@ public class ResultFragment extends Fragment implements NetworkListener {
      */
     private void sendResultLog(String message){
         if (message != null) {
-            Utils.sendLog("SPMOB7", "Result:" + message);
-        }else {
-            Utils.sendLog("SPMOB7", null);
+            Utils.sendLog("SPMOB7", "Result:" + message, "Result Screen");
+        } else {
+            Utils.sendLog("SPMOB7", null, "Result Screen");
         }
     }
 

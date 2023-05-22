@@ -8,6 +8,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkCapabilities;
 import android.net.NetworkInfo;
 import android.os.Build;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 import android.webkit.WebView;
@@ -16,7 +17,6 @@ import android.widget.Button;
 
 import com.example.shuftirpo.R;
 import com.example.shuftirpo.Singleton.SetAndGetData;
-import com.example.shuftirpo.cloud.HttpConnectionHandler;
 import com.example.shuftirpo.models.ShuftiVerificationRequestModel;
 
 import org.json.JSONArray;
@@ -28,7 +28,6 @@ import java.io.InputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
@@ -118,7 +117,7 @@ public class Utils {
      * @return returns the version of the sdk
      */
     public static String initiatedSdkVersion(){
-        return  "1.0.2";
+        return  "1.0.3";
     }
 
     /**
@@ -213,11 +212,11 @@ public class Utils {
      * method to send log to backend if sockets are connected
      * else connecting the sockets
      * and trying to send the log again (will try once)
-     *
-     * @param statusCode log's code
+     *  @param statusCode log's code
      * @param data       log's data/message
+     * @param screen_name
      */
-    public static void sendLog(String statusCode, String data) {
+    public static void sendLog(String statusCode, String data, String screen_name) {
         JSONObject spLogObject = new JSONObject();
         JSONObject dataObject = new JSONObject();
         JSONObject infoObject = new JSONObject();
@@ -227,14 +226,28 @@ public class Utils {
             } else {
                 infoObject.put("time", Utils.getCurrentTimeStamp());
             }
-            infoObject.put("data", data);
+
+            JSONObject dataJsonObject=null ;
+            try {
+                dataJsonObject = new JSONObject(data);
+            } catch (Exception e) {}
+            if (dataJsonObject == null) {
+                infoObject.put("data", data);
+            } else {
+                infoObject.put("data", dataJsonObject);
+            }
+
             dataObject.put("status_code", statusCode);
             dataObject.put("info", infoObject);
             spLogObject.put("request_id", SetAndGetData.getInstance().getReference());
             spLogObject.put("data", dataObject);
-            spLogObject.put("source", "android");
+            spLogObject.put("source", "mobile");
+            spLogObject.put("token", sha256("SPMOB12345678910" + SetAndGetData.getInstance().getReference().replaceAll(" ", "")));
+            spLogObject.put("screen_name", screen_name);
+            spLogObject.put("initiated_source",initiatedSdkType());
+            spLogObject.put("initiated_version",initiatedSdkVersion());
             if (SetAndGetData.getInstance().getmSocket() != null && SetAndGetData.getInstance().getmSocket().connected()) {
-                SetAndGetData.getInstance().getmSocket().emit("save-log", spLogObject);
+                SetAndGetData.getInstance().getmSocket().emit("save-detailed-log", spLogObject);
             } else {
                 SetAndGetData.getInstance().getLogsList().add(spLogObject);
                 new SocketConnection();
@@ -243,6 +256,19 @@ public class Utils {
             Log.w("LogsSocket", e.getMessage());
         }
     }
+
+
+    /**
+     * a unique and persistent identifier for the device that remains the same across app installs and updates
+     * It can used as identifier
+     * @param context   Context of the called activity
+     * @return          returns the unique device id
+     */
+    public static String getDeviceId(Context context) {
+        return Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
+    }
+
+
 
     /**
      * Method to get verification type name from state code

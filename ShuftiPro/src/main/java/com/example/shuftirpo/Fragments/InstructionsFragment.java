@@ -79,6 +79,7 @@ public class InstructionsFragment extends Fragment {
     private void getStartListener(){
         fragmentInstructionsBinding.startedBtn.setOnClickListener(view -> {
             if (ShuftiVerifyActivity.checkPermissions()) {
+                Utils.sendLog("SPMOB27", "", "Camera Screen");
                 Navigation.findNavController(view).navigate(InstructionsFragmentDirections.navigateFromInstructionsToCamera("doc_front",
                         Utils.getUniqueReference(SetAndGetData.getInstance().getContext()), SetAndGetData.getInstance().getCountryCode(), "id_card"));
             }

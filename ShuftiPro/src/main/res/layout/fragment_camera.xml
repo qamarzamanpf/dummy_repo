@@ -135,8 +135,8 @@
                 <android.widget.Button
                     android:id="@+id/cardBorderEdges"
                     android:layout_width="match_parent"
-                    android:layout_height="257dp"
-                    android:layout_marginStart="17dp"
+                    android:layout_height="255dp"
+                    android:layout_marginStart="18dp"
                     android:layout_marginEnd="18dp"
                     android:background="@drawable/card_bg_edges"
                     android:clickable="false"

@@ -260,7 +260,7 @@ public class CameraFragment extends Fragment {
             cancelTimer();
             camera.getCameraControl().enableTorch(false);
             try {
-                captureState = captureState + socketResponseMessage;
+                captureState = "manualCapture";
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -892,7 +892,7 @@ public class CameraFragment extends Fragment {
             cancelDialog();
             cancelTimer();
             isToCapture = false;
-            captureState = "AutoCapture";
+            captureState = "autoCapture";
             getActivity().runOnUiThread(() -> {
                 errorLayoutGone();
             });
@@ -963,6 +963,9 @@ public class CameraFragment extends Fragment {
             fragmentCameraBinding.previewParentLayout.setVisibility(View.VISIBLE);
             fragmentCameraBinding.cameraParentLayout.setVisibility(View.GONE);
 
+            Utils.sendLog("SPMOB34", captureState, "Proof Preview Screen");
+            Utils.sendLog("SPMOB77", "Captured", null);
+
             switch (verificationType) {
                 case Constants.CODE_DOC_FRONT:
                     fragmentCameraBinding.cameraInstructionTop.setText(getString(R.string.front_doc_preview));
@@ -1007,7 +1010,7 @@ public class CameraFragment extends Fragment {
         cancelTimer();
         camera.getCameraControl().enableTorch(false);
         try {
-            captureState = captureState + socketResponseMessage;
+            captureState = "manualCapture";
         } catch (Exception e) {
             e.printStackTrace();
         }

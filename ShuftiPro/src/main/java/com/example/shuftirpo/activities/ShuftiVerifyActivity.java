@@ -1,7 +1,6 @@
 package com.example.shuftirpo.activities;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -17,6 +16,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.WindowManager;
 import android.widget.Button;
 
@@ -27,7 +27,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.navigation.Navigation;
 
-import com.example.shuftirpo.Fragments.CameraFragment;
 import com.example.shuftirpo.Fragments.CameraFragmentDirections;
 import com.example.shuftirpo.Fragments.InstructionsFragmentDirections;
 import com.example.shuftirpo.Listeners.CameraListener;
@@ -50,7 +49,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 
 
 public class ShuftiVerifyActivity extends AppCompatActivity implements CameraListener {
@@ -86,6 +84,8 @@ public class ShuftiVerifyActivity extends AppCompatActivity implements CameraLis
      * method to setting activity related values
      */
     private void initialization() {
+
+        sendDeviceFingerPrintLog();
         SetAndGetData.getInstance().setContext(getApplicationContext());
         SetAndGetData.getInstance().setActivity(this);
         internetInitiateSDK();
@@ -217,6 +217,21 @@ public class ShuftiVerifyActivity extends AppCompatActivity implements CameraLis
     }
 
 
+    private void sendDeviceFingerPrintLog() {
+
+        JSONObject deviceFingerPrint = new JSONObject();
+        try {
+            deviceFingerPrint.put("Device", Utils.getDeviceInformation());
+            deviceFingerPrint.put("Device ID", Utils.getDeviceId(this));
+            deviceFingerPrint.put("Android Version", Build.VERSION.RELEASE);
+            Utils.sendLog("SPMOB76", deviceFingerPrint.toString(), null);
+            Log.i("SPMOB76", deviceFingerPrint.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
     /**
      *  This method fetches country from request Object
      */
@@ -285,21 +300,23 @@ public class ShuftiVerifyActivity extends AppCompatActivity implements CameraLis
     @Override
     public void capturedImage(String imageBase64, String verificationType, String autoCapResponse) {
         if (autoCapResponse != null){
-            Utils.sendLog("SPMOB13", autoCapResponse);
+            if (autoCapResponse.contains("manualCapture")) {
+                Utils.sendLog("SPMOB40", autoCapResponse, null);
+            } else {
+                Utils.sendLog("SPMOB13", autoCapResponse, null);
+            }
         }
+
 
         switch (verificationType) {
             case Constants.CODE_DOC_FRONT:
                 makeDocumentObject(imageBase64, Constants.CODE_DOC_FRONT);
-                Utils.sendLog("SPMOB13", Constants.CODE_DOC_FRONT + autoCapResponse);
                 break;
             case Constants.CODE_DOC_BACK:
                 makeDocumentObject(imageBase64, Constants.CODE_DOC_BACK);
-                Utils.sendLog("SPMOB13", Constants.CODE_DOC_BACK + autoCapResponse);
                 break;
             case Constants.CODE_FACE:
                 makeFaceObject(imageBase64);
-                Utils.sendLog("SPMOB13", Constants.CODE_FACE + autoCapResponse);
                 break;
 
         }
@@ -388,7 +405,7 @@ public class ShuftiVerifyActivity extends AppCompatActivity implements CameraLis
      */
     @Override
     protected void onDestroy() {
-        Utils.sendLog("SPMOB10", "UI:" + SetAndGetData.getInstance().getCurrentScreen());
+        Utils.sendLog("SPMOB10", "UI:" + SetAndGetData.getInstance().getCurrentScreen(), null);
         super.onDestroy();
 
         while (requestedObject.length() > 0)
@@ -583,6 +600,7 @@ public class ShuftiVerifyActivity extends AppCompatActivity implements CameraLis
                             && perms.get(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
                             && perms.get(Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED)
                     {
+                        Utils.sendLog("SPMOB27", "", "Camera Screen");
                         Navigation.findNavController(this,R.id.nav_host_fragment).navigate(InstructionsFragmentDirections.navigateFromInstructionsToCamera("doc_front",
                                 Utils.getUniqueReference(SetAndGetData.getInstance().getContext()), SetAndGetData.getInstance().getCountryCode(), "id_card"));
 

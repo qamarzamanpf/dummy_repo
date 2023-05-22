@@ -9,14 +9,12 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.util.Base64;
 import android.util.Log;
 
 
 import com.example.shuftirpo.Fragments.ResultFragment;
 import com.example.shuftirpo.Listeners.NetworkListener;
-import com.example.shuftirpo.Listeners.ReferenceResponseListener;
 import com.example.shuftirpo.Singleton.SetAndGetData;
 import com.example.shuftirpo.Utils.Constants;
 import com.example.shuftirpo.Utils.IntentHelper;
@@ -131,7 +129,7 @@ public class HttpConnectionHandler {
                             cred = basic(CLIENT_ID, SECRET_KEY);
 
                         }
-                        Utils.sendLog("SPMOB5", null);
+                        Utils.sendLog("SPMOB5", null, "Loader Screen");
 
                         connection.setRequestProperty("Authorization", cred);
                         connection.connect();
@@ -201,7 +199,7 @@ public class HttpConnectionHandler {
                             resultResponse = inputStreamToString(inputStream);
                             Log.e(TAG, "Response : " + resultResponse);
                         }
-                        Utils.sendLog("SPMOB6", "Response code:" + responseCode);
+                        Utils.sendLog("SPMOB6", "Response code:" + responseCode, null);
 
                     } catch (Exception e) {
                         Log.e("TAG1", e.toString());
@@ -221,6 +219,7 @@ public class HttpConnectionHandler {
                     super.onProgressUpdate(values);
                     resultFragment.handleProgress(values[0]);
                     if (values[0] == 100) {
+                        Utils.sendLog("SPMOB21", null, null);
                         resultFragment.handleProgress(100);
                     }
                 }
@@ -233,7 +232,7 @@ public class HttpConnectionHandler {
                             result = "";
                         }
                         if (result.isEmpty()) {
-                            Utils.sendLog("SPMOB16", "");
+                            Utils.sendLog("SPMOB16", "", null);
                             networkListener.errorResponse(result);
                         } else {
                             JSONObject jsonObj = new JSONObject(result);

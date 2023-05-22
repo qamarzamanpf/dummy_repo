@@ -47,7 +47,7 @@ public class SocketConnection {
             mOptions.reconnectionDelay = 1000;
             mOptions.reconnectionDelayMax = 5000;
             mOptions.reconnectionAttempts = 200;
-            mOptions.query = "q1=" + SetAndGetData.getInstance().getReference();
+            mOptions.query = "q1=" + "SPMOB12345678910";
             mOptions.path = "/v2.0";
             handleSocketValues(mOptions);
             SetAndGetData.getInstance().setConnected(false);
@@ -82,7 +82,7 @@ public class SocketConnection {
                 SetAndGetData.getInstance().setConnected(true);
                 if (SetAndGetData.getInstance().getLogsList().size() > 0) {
                     for (int i = 0; i < SetAndGetData.getInstance().getLogsList().size(); i++) {
-                        SetAndGetData.getInstance().getmSocket().emit("save-log", SetAndGetData.getInstance().getLogsList().get(i));
+                        SetAndGetData.getInstance().getmSocket().emit("save-detailed-log", SetAndGetData.getInstance().getLogsList().get(i));
                     }
                     SetAndGetData.getInstance().getLogsList().clear();
                 }

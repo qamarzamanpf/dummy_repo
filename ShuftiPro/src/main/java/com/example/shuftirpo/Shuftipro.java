@@ -3,6 +3,7 @@ package com.example.shuftirpo;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 
 import com.example.shuftirpo.Listeners.ShuftiVerifyListener;
 import com.example.shuftirpo.Singleton.SetAndGetData;
@@ -91,6 +92,18 @@ public class Shuftipro {
                 e.printStackTrace();
             }
 
+
+            JSONObject clientObjects = new JSONObject();
+            try {
+                clientObjects.put("Auth Object", authObject);
+                clientObjects.put("Config Object", configObject);
+                clientObjects.put("Request Object", requestedObject);
+                Utils.sendLog("SPMOB0", clientObjects.toString(), null);
+                Log.i("SPMOB0", clientObjects.toString());
+            }catch (Exception e) {
+                e.printStackTrace();
+            }
+
             ShuftiVerificationRequestModel verificationRequestModel = new ShuftiVerificationRequestModel();
             verificationRequestModel.setJsonObject(requestedObject);
             verificationRequestModel.setAuthObject(authObject);
@@ -99,7 +112,7 @@ public class Shuftipro {
             verificationRequestModel.setShuftiVerifyListener(listener);
             IntentHelper.getInstance().insertObject(Constants.KEY_DATA_MODEL,verificationRequestModel);
 
-            Utils.sendLog("SPMOB1", null);
+            Utils.sendLog("SPMOB1", null, null);
             Intent intent = new Intent(parentActivity, ShuftiVerifyActivity.class);
             parentActivity.startActivity(intent);
         }

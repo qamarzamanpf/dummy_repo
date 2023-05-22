@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cashew.iml" filepath="$PROJECT_DIR$/.idea/modules/cashew.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ShuftiPro/cashew.ShuftiPro.iml" filepath="$PROJECT_DIR$/.idea/modules/ShuftiPro/cashew.ShuftiPro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ShuftiPro/cashew.ShuftiPro.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/ShuftiPro/cashew.ShuftiPro.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ShuftiPro/cashew.ShuftiPro.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ShuftiPro/cashew.ShuftiPro.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ShuftiPro/cashew.ShuftiPro.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/ShuftiPro/cashew.ShuftiPro.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/cashew.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/cashew.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/cashew.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/cashew.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/cashew.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/cashew.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/cashew.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/cashew.app.unitTest.iml" />
+    </modules>
+  </component>
+</project>

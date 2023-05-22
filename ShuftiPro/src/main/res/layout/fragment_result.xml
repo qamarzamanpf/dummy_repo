@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/uploadingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/stepVerifImg"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:contentDescription="@string/stepverificon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintVertical_bias="0.4"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/loader" />
+
+        <TextView
+            android:id="@+id/docUploading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="@string/doc_uploading"
+            android:fontFamily="@font/manrope_bold"
+            android:textColor="@color/black_heading"
+            android:gravity="center"
+            android:textSize="19sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/stepVerifImg" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/successVerifLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/successImg"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/successful_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintVertical_bias="0.35"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/successVerifHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="@dimen/margin_sides"
+            android:layout_marginEnd="@dimen/margin_sides"
+            android:text="@string/successfully_verified"
+            android:gravity="center"
+            android:fontFamily="@font/manrope_bold"
+            android:textColor="@color/black_heading"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/successImg"/>
+
+        <TextView
+            android:id="@+id/successVerifInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/do_shopping_now"
+            android:gravity="center"
+            android:textColor="@color/black_text_n_bg"
+            android:textSize="15sp"
+            android:layout_marginStart="@dimen/margin_sides"
+            android:layout_marginEnd="@dimen/margin_sides"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/successVerifHeading" />
+
+        <TextView
+            android:id="@+id/successSubHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/happy_shopping"
+            android:textColor="@color/black_text_n_bg"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:layout_marginStart="@dimen/margin_sides"
+            android:layout_marginEnd="@dimen/margin_sides"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/successVerifInfo" />
+
+        <android.widget.Button
+            android:id="@+id/letsGoBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/black_button_bg"
+            android:padding="14dp"
+            android:text="@string/lets_go"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:layout_marginBottom="32dp"
+            android:layout_marginEnd="@dimen/margin_sides"
+            android:layout_marginStart="@dimen/margin_sides"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/unsuccessVerifLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/unsuccessImg"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/unsuccessful_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintVertical_bias="0.2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+        <TextView
+            android:id="@+id/unsuccessVerifHeading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_sides"
+            android:layout_marginTop="42dp"
+            android:layout_marginEnd="@dimen/margin_sides"
+            android:fontFamily="@font/manrope_bold"
+            android:text="@string/not_verified"
+            android:textColor="@color/black_heading"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/unsuccessImg" />
+
+        <TextView
+            android:id="@+id/wentWrong"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_sides"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="@dimen/margin_sides"
+            android:lineSpacingExtra="@dimen/text_line_spacing"
+            android:text="@string/something_went_wrong"
+            android:textColor="@color/black_text_n_bg"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/unsuccessVerifHeading" />
+
+        <TextView
+            android:id="@+id/unsuccessInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_sides"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="@dimen/margin_sides"
+            android:lineSpacingExtra="@dimen/text_line_spacing"
+            android:text="@string/make_sure_to_take_clear"
+            android:textColor="@color/black_text_n_bg"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/wentWrong" />
+
+        <TextView
+            android:id="@+id/unsuccessDetailMsg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_sides"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="@dimen/margin_sides"
+            android:lineSpacingExtra="@dimen/text_line_spacing"
+            android:text="@string/unsuccessful_detailed_msg"
+            android:textColor="@color/black_text_n_bg"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/unsuccessInfo" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btnParentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_sides"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="32dp"
+            android:layout_marginEnd="@dimen/margin_sides"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <android.widget.Button
+                android:id="@+id/proceedBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/black_button_bg"
+                android:padding="14dp"
+                android:text="@string/proceed"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

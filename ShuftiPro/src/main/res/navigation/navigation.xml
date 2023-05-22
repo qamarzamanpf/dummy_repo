@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/instructionFragment">
+
+    <fragment
+        android:id="@+id/instructionFragment"
+        android:name="com.example.shuftirpo.Fragments.InstructionsFragment"
+        android:label="fragment_instructions"
+        tools:layout="@layout/fragment_instructions">
+        <action
+            android:id="@+id/navigate_from_instructions_to_camera"
+            app:destination="@id/cameraFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_from_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_from_right"  />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="com.example.shuftirpo.Fragments.CameraFragment"
+        android:label="fragment_camera"
+        tools:layout="@layout/fragment_camera">
+
+        <action
+            android:id="@+id/navigate_from_camera_to_result"
+            app:destination="@id/resultFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_from_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_from_right"  />
+
+<!--        <action-->
+<!--            android:id="@+id/navigate_from_camera_to_instructions"-->
+<!--            app:destination="@id/instructionFragment"-->
+<!--            app:enterAnim="@anim/enter_from_right"/>-->
+
+        <argument
+            android:name="verification_type"
+            app:argType="string" />
+        <argument
+            android:name="reference"
+            app:argType="string" />
+        <argument
+            android:name="country"
+            app:argType="string" />
+        <argument
+            android:name="supported_type"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.shuftirpo.Fragments.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result">
+
+
+    </fragment>
+
+</navigation>

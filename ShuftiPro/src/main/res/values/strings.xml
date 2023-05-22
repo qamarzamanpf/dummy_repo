@@ -1,0 +1,111 @@
+<resources>
+    <string name="app_name">ShuftiPro</string>
+    <string name="step_verif_heading">Let\'s get you verified</string>
+    <string name="step_verif_info">We\'ll need an ID and a selfie to verify your identity and prevent someone else creating an account in your name.</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="snap_id">Snap your ID front &amp; back</string>
+
+    <string name="snap_id_info">We\'ll just need to verify both sides of your National ID.</string>
+    <string name="take_selfie">Take a selfie</string>
+    <string name="take_selfie_info">We\'ll need a selfie to make sure no one else is creating an account in your name.</string>
+    <string name="get_started">Get started</string>
+    <string name="skip">Skip</string>
+    <string name="stepverificon">stepVerifIcon</string>
+    <string name="go_back">Go Back</string>
+    <string name="front_of_id">Show us the front of your ID</string>
+    <string name="is_front_readable">Is the front of your ID readable?</string>
+    <string name="is_back_readable">Is the back of your ID readable?</string>
+    <string name="is_face_visible">Is your face clearly visible?</string>
+    <string name="is_text_readable">Make sure we can see and read your entire ID.</string>
+    <string name="is_face_lit">Make sure the lighting\'s good and we can see you.</string>
+    <string name="grant_permissions">App won\'t work without permissions. Please, restart app and give access to the permissions.</string>
+    <string name="exit">Exit</string>
+
+    <string name="no_internet_connection">No Internet Connection</string>
+    <string name="connect_your_phone_to_internet">Please Connect your phone to Internet</string>
+    <string name="your_request_has_timed_out">Your request has timed out</string>
+    <string name="make_sure_internet_connection">Make sure your device is connected to the internet</string>
+
+    <string name="front_doc_preview">ID front preview</string>
+    <string name="back_doc_preview">ID back preview</string>
+    <string name="face_preview">Face photo preview</string>
+
+    <string name="empty_client_id">ClientId cannot be empty. Please, provide your client id.</string>
+    <string name="empty_secret_key">Secret key cannot be empty. Please, provide your secret key.</string>
+    <string name="empty_reference">Reference parameter cannot be empty. Please, provide a unique reference.</string>
+
+
+
+
+    <string name="front_id_inst">Make sure the entire front of your ID is in the frame above.</string>
+    <string name="blurry_doc">Document is blurry</string>
+    <string name="blurry_face">Face is blurry</string>
+    <string name="request_timeout">Request Timeout</string>
+    <string name="timeout"><b>Timeout</b></string>
+    <string name="timeout_Subheading">Do you still want to continue with Auto-Capture or capture manually</string>
+    <string name="retry">Retry</string>
+    <string name="capture_manually">Cancel</string>
+    <string name="back_of_id">Show us the back of your ID</string>
+    <string name="back_id_inst">Make sure the entire back of your ID is in the frame above.</string>
+    <string name="face_verification">Face verification</string>
+    <string name="face_photo">Face photo</string>
+    <string name="face_verif_inst">You\'ve done this before, position your head inside the frame. But, make sure to get rid of any accessories.</string>
+
+    <string name="missing_corners">Please provide a valid document with all four corners being visible.</string>
+    <string name="blurred_document">Please provide a valid document and hold it still for a while.</string>
+    <string name="document_too_far">Please bring the document closer and place it inside the box.</string>
+
+    <string name="face_not_in_oval">Please place the face inside the oval.</string>
+    <string name="blurred_face">The face image is blurred, please provide a clear face.</string>
+    <string name="face_too_far">Please bring your face closer and place it inside the oval.</string>
+    <string name="face_forward">Please look towards the camera and place the face inside the oval.</string>
+
+    <string name="confirm_btn">Yes, looks good</string>
+    <string name="retake">Retake</string>
+    <string name="doc_uploading">Uploading your documents…</string>
+    <string name="successfully_verified">Aaand...Done!</string>
+    <string name="do_shopping_now">Welcome to the Cashew club.</string>
+    <string name="happy_shopping">Happy shopping!</string>
+
+
+    <string name="lets_go">Let\'s go!</string>
+
+    <string name="not_verified">Document verification unsuccessful</string>
+    <string name="something_went_wrong">Oops! Something went wrong.</string>
+    <string name="make_sure_to_take_clear">Please make sure you take clear front and back pictures of your National/Resident ID</string>
+    <string name="unsuccessful_detailed_msg">Please ensure that the data on the document is clearly visible. That no reflections are seen on the document image, and that the image captured is in good lighting conditions.</string>
+    <string name="proceed">Proceed</string>
+    <string name="do_later">I will do it later</string>
+    <string name="identity_verify">Just a moment, the cashews are\nhard at work…</string>
+
+
+
+    <string name="successfully_submitted">Your documents have been submitted successfully!</string>
+    <string name="forwarded_to_merchant">Verification results will be forwarded to your merchant</string>
+
+    <string name="error_occured">Error Occurred</string>
+    <string name="invalid_request">Invalid Request</string>
+    <string name="invalid_request_msg">Your request is invalid, please try again!</string>
+    <string name="timeout_msg">Your request have been timeout, please try again!</string>
+    <string name="request_unauthorized">Request Unauthorized</string>
+    <string name="request_unauthorized_msg">Your request is unauthorized, please try again!</string>
+
+
+    <string name="confirm_cancellation">Confirm Cancellation</string>
+    <string name="confirm">Confirm</string>
+    <string name="not_now">Not Now</string>
+    <string name="are_you_sure_to_cancel_verification_process">Are you sure you want to cancel the verification process?</string>
+
+
+
+    <string name="top_front_id">Front of your ID</string>
+    <string name="top_back_id">Back of your ID</string>
+
+
+
+
+
+
+
+</resources>

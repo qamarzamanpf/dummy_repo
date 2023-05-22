@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ShuftiVerifyActivity">
+
+        <TextView
+            android:id="@+id/skipBtn"
+            android:clickable="true"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_sides"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="@dimen/margin_sides"
+            android:text="@string/skip"
+            android:textColor="@color/progress"
+            android:textSize="16sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:focusable="true" />
+
+        <TextView
+            android:id="@+id/stepVerifHeading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_sides"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="@dimen/margin_sides"
+            android:fontFamily="@font/manrope_bold"
+            android:text="@string/step_verif_heading"
+            android:textColor="@color/black_heading"
+            android:textSize="24sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/skipBtn" />
+
+        <TextView
+            android:id="@+id/stepVerifInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_sides"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="@dimen/margin_sides"
+            android:lineSpacingExtra="@dimen/text_line_spacing"
+            android:text="@string/step_verif_info"
+            android:textColor="@color/black_text_n_bg"
+            android:textSize="15sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/stepVerifHeading" />
+
+        <ImageView
+            android:id="@+id/stepVerifImg"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/stepverificon"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/stepVerifInfo"
+            app:srcCompat="@drawable/ic_step_verif_icon" />
+
+        <ImageView
+            android:id="@+id/stepOneBg"
+            android:layout_width="31dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="@dimen/margin_sides"
+            android:layout_marginTop="6dp"
+            android:contentDescription="@string/stepverificon"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/stepVerifImg"
+            app:srcCompat="@drawable/ic_step_num_bg" />
+
+        <TextView
+            android:id="@+id/firstInstructionNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/manrope_bold"
+            android:text="@string/one"
+            android:textColor="@color/white"
+            android:textSize="19sp"
+            app:layout_constraintBottom_toBottomOf="@+id/stepOneBg"
+            app:layout_constraintLeft_toLeftOf="@+id/stepOneBg"
+            app:layout_constraintRight_toRightOf="@+id/stepOneBg"
+            app:layout_constraintTop_toTopOf="@+id/stepOneBg" />
+
+        <TextView
+            android:id="@+id/firstInstructionHeading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="@dimen/margin_sides"
+            android:fontFamily="@font/manrope_bold"
+            android:text="@string/snap_id"
+            android:textColor="@color/black_heading"
+            android:textSize="19sp"
+            app:layout_constraintBottom_toBottomOf="@+id/stepOneBg"
+            app:layout_constraintLeft_toRightOf="@+id/stepOneBg"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/stepOneBg" />
+
+        <TextView
+            android:id="@+id/firstInstructionInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="@dimen/margin_sides"
+            android:lineSpacingExtra="@dimen/text_line_spacing"
+            android:text="@string/snap_id_info"
+            android:textColor="@color/black_text_n_bg"
+            android:textSize="15sp"
+            app:layout_constraintLeft_toLeftOf="@+id/firstInstructionHeading"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/firstInstructionHeading" />
+
+
+        <ImageView
+            android:id="@+id/stepTwoBg"
+            android:layout_width="31dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="@dimen/margin_sides"
+            android:layout_marginTop="40dp"
+            android:contentDescription="@string/stepverificon"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/firstInstructionInfo"
+            app:srcCompat="@drawable/ic_step_num_bg" />
+
+        <TextView
+            android:id="@+id/twoInstructionNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/manrope_bold"
+            android:text="@string/two"
+            android:textColor="@color/white"
+            android:textSize="19sp"
+            app:layout_constraintBottom_toBottomOf="@+id/stepTwoBg"
+            app:layout_constraintLeft_toLeftOf="@+id/stepTwoBg"
+            app:layout_constraintRight_toRightOf="@+id/stepTwoBg"
+            app:layout_constraintTop_toTopOf="@+id/stepTwoBg" />
+
+        <TextView
+            android:id="@+id/twoInstructionHeading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="@dimen/margin_sides"
+            android:fontFamily="@font/manrope_bold"
+            android:text="@string/take_selfie"
+            android:textColor="@color/black_heading"
+            android:textSize="19sp"
+            app:layout_constraintBottom_toBottomOf="@+id/stepTwoBg"
+            app:layout_constraintLeft_toRightOf="@+id/stepTwoBg"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/stepTwoBg" />
+
+        <TextView
+            android:id="@+id/twoInstructionInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="@dimen/margin_sides"
+            android:lineSpacingExtra="@dimen/text_line_spacing"
+            android:text="@string/take_selfie_info"
+            android:textColor="@color/black_text_n_bg"
+            android:textSize="15sp"
+            app:layout_constraintLeft_toLeftOf="@+id/twoInstructionHeading"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/twoInstructionHeading" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btnParentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_sides"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="26dp"
+            android:layout_marginEnd="@dimen/margin_sides"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <ImageView
+                android:id="@+id/exitBtn"
+                android:layout_width="16dp"
+                android:layout_height="50sp"
+                android:clickable="true"
+                android:contentDescription="@string/go_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_go_back"
+                app:tint="@color/progress"
+                android:focusable="true" />
+
+            <ImageView
+                android:id="@+id/divider"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_sides"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/exitBtn"
+                app:layout_constraintRight_toLeftOf="@id/startedBtn"
+                app:srcCompat="@drawable/divider" />
+
+            <android.widget.Button
+                android:id="@+id/startedBtn"
+                android:layout_height="50sp"
+                android:layout_width="50sp"
+                android:background="@drawable/ic_go_forward"
+                android:fontFamily="@font/manrope_bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

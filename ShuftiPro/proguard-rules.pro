@@ -38,7 +38,7 @@
 
 -keepattributes InnerClasses
 
--keep class com.example.shuftirpo.**
+-keep class com.example.shuftirpo.Shuftipro**
 
 -keep class com.example.shuftirpo.**
 -keepclassmembers class com.example.shuftirpo.Shuftipro** {
